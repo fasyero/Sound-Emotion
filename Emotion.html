@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Hear and Feel</title>
+    <script type="text/javascript" src="main2.js"></script>
+    <link rel="stylesheet" href="StyleSheet1.css">
+</head>
+<body>
+    <p>
+        <button onclick="getCalm()">Calm</button> <button onclick="getTense()">Tense</button> <button onclick="getAfraid()">Afraid</button> <button onclick="getSad()">Sad</button> <button onclick="getTriumph()">Triumphant</button>
+    </p>
+    <br />
+    <button onclick="Play()">Play/Pause</button>   <input type="range" min="1" max="100" value="50" id="Volume" onmouseup="VolumeChange()"> <i id="VolumeDis">50</i>
+    <p>Second simultaneous piece</p>
+    <p>
+        <button onclick="getCalm2()">Calm</button> <button onclick="getTense2()">Tense</button> <button onclick="getAfraid2()">Afraid</button> <button onclick="getSad2()">Sad</button> <button onclick="getTriumph2()">Triumphant</button>
+    </p>
+    <br />
+    <button onclick="Play2()">Play/Pause</button>   <input type="range" min="1" max="100" value="50" id="Volume2" onmouseup="VolumeChange2()"> <i id="VolumeDis2">50</i>
+</body>
+</html>
