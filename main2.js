@@ -1,8 +1,8 @@
-/* File : main .js
- Project : synthesizer
+/* File : main2 .js
+ Project : Emotion and sound
 Author : Corey Safinuk
-Date : March 16th 2020
-Description : The code that enables the synthesizer project
+Date : April 18th 2020
+Description : The code that enables the sound and emotion project
 
 All sounds sourced from feesounds.com
 Sources for music:emotional piano riff by rom2014, birds singing forest by burghrecords , suspense by woodmoose, scary suspense by tyops, superhappycheesyloop2 by luckylittleraven.
