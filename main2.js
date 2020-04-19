@@ -15,6 +15,7 @@ var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 //sets up the gain for normalising
 var gainey = audioCtx.createGain();
 
+//helps find which source should be playing
 var bufftest = 0;
 var bufftest2 = 0;
 
@@ -28,6 +29,8 @@ var source6;
 var source7;
 var source8;
 var source9;
+
+// functions for getting and setting up the audio context
 function getSad() {
     //creates the buffer for the source so it can be loaded into
     source = audioCtx.createBufferSource();
@@ -56,8 +59,9 @@ function getSad() {
             function (e) { console.log("Error with decoding audio data" + e.err); });
 
     }
+    //sets the background colour
     document.body.style.backgroundColor = "gray";
-
+    //sets which source should be playing
     bufftest = 0;
     request.send();
 }
@@ -90,7 +94,7 @@ function getTense() {
             function (e) { console.log("Error with decoding audio data" + e.err); });
 
     }
-    document.body.style.backgroundColor = "black";
+    document.body.style.backgroundColor = "red";
 
     bufftest = 1;
     request.send();
@@ -169,7 +173,7 @@ function getAfraid() {
 
     source4 = audioCtx.createBufferSource();
 
-    request.open('GET', 'scary.webm', true);
+    request.open('GET', 'scary.wav', true);
 
     request.responseType = 'arraybuffer';
 
@@ -192,14 +196,17 @@ function getAfraid() {
             function (e) { console.log("Error with decoding audio data" + e.err); });
 
     }
-    document.body.style.backgroundColor = "red";
+    document.body.style.backgroundColor = "black";
 
     bufftest = 4;
     request.send();
 }
+
+//A repitition of the above functions, allows multiples to be played at once
+
 function getSad2() {
     //creates the buffer for the source so it can be loaded into
-    source = audioCtx.createBufferSource();
+    source5 = audioCtx.createBufferSource();
     var request = new XMLHttpRequest();
 
     request.open('GET', 'SadPiano.wav', true);
@@ -334,7 +341,7 @@ function getAfraid2() {
 
     source9 = audioCtx.createBufferSource();
 
-    request.open('GET', 'scary.webm', true);
+    request.open('GET', 'scary.wav', true);
 
     request.responseType = 'arraybuffer';
 
@@ -364,9 +371,8 @@ function getAfraid2() {
 
 //a test to ensure the start/stop works right
 var playing = 0;
+//finds the playing buffer so even if the next choice is different it still stops correctly
 var lastbuff = 0;
-var playing2 = 0;
-var lastbuff2 = 0;
 /*simply start and stop the audio, the playing variable ensures it does the opposite of what it is currently doing */
 function Play() {
 
@@ -418,6 +424,10 @@ function Play() {
     }
 }
 
+
+//again a carbon copy of the above function and variables
+var playing2 = 0;
+var lastbuff2 = 0;
 function Play2() {
 
     if (playing2 === 0) {
